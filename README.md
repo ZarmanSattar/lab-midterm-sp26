@@ -6,3 +6,4 @@ ownership fix test
 store credentials
 build check
 final verification
+build check
