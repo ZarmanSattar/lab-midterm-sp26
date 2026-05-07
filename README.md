@@ -4,3 +4,4 @@ polling test
 ownership fix test
 ownership fix test
 store credentials
+build check
