@@ -5,8 +5,7 @@ pipeline {
         stage('Fetch Data from GitHub') {
             steps {
                 sh '''
-                    cd /home/ubuntu/lab-midterm-sp26
-                    git pull origin main
+                    rsync -av --exclude='.git' ${WORKSPACE}/ /home/ubuntu/lab-midterm-sp26/
                 '''
             }
         }
