@@ -2,18 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Fetch Data from GitHub') {
-            steps {
-                sh '''
-                    rsync -av --exclude='.git' ${WORKSPACE}/ /home/ubuntu/lab-midterm-sp26/
-                '''
-            }
-        }
-
         stage('Train Model') {
             steps {
                 sh '''
-                    cd /home/ubuntu/lab-midterm-sp26
                     python3 train.py
                 '''
             }
@@ -22,7 +13,6 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh '''
-                    cd /home/ubuntu/lab-midterm-sp26
                     docker build -t ml-pipeline-image .
                 '''
             }
