@@ -8,3 +8,4 @@ build check
 final verification
 build check
 build check
+build check
